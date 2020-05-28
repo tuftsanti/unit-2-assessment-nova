@@ -59,7 +59,7 @@ app.post('/', (req, res) => {
 });
 
 // DELETE ROUTE
-app.delete('/:index', (req,res) => {
+app.delete('/:id', (req,res) => {
     Todo.findByIdAndRemove(req.params.id, (error, item) => {
         if (error) {
             show(error)

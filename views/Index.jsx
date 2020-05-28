@@ -6,7 +6,6 @@ class Index extends React.Component {
         return (
             <>
                 <h1>To Do List</h1><br/>
-                {/* <h2>list start{this.props.todos.todo}</h2> */}
                 <ul> 
                     {
                     todos ?                     
@@ -15,14 +14,14 @@ class Index extends React.Component {
                             <li>
                                 <h2>{todo.todo} 
                                     {(todo.isDone) ? ` - Done` : ` - Not Done`}
-                                    <form action={`/${index}?_method=DELETE`} method="POST">
+                                    <form action={`/${todo._id}?_method=DELETE`} method="POST">
                                         <input type="submit" value="DELETE"/>
                                     </form>
                                 </h2>
                             </li>
                             )
                         })
-                        : <h2>There are no To Dos yet!</h2>
+                        : <h3>There are no To Dos yet!</h3>
                     }
                     <form action="/" method="POST">
                         <input type="text" name="todo" />
