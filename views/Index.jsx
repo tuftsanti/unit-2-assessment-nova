@@ -3,12 +3,13 @@ const React = require('react')
 class Index extends React.Component {
     render() {
         const {todos} = this.props;
+        // console.log(todos.length)
         return (
             <>
                 <h1>To Do List</h1><br/>
                 <ul> 
                     {
-                    todos ?                     
+                    (todos.length > 0) ?                     
                     todos.map((todo, index) => {
                          return (
                             <li>
